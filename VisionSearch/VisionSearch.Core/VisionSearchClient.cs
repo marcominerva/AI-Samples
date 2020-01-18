@@ -37,7 +37,7 @@ namespace VisionSearch.Core
 
         public async Task<SearchResult> SearchAsync(Stream image)
         {
-            var imageAnalysisResult = await visionClient.AnalyzeImageInStreamAsync(image, visualFeatures);
+            var imageAnalysisResult = await visionClient.AnalyzeImageInStreamAsync(image, visualFeatures, visionDetails);
             var description = ExtractDescription(imageAnalysisResult);
 
             if (!string.IsNullOrWhiteSpace(description))
