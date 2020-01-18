@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+
+<div class="text-center">
+    <form enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" asp-for="@Model.Upload" class="custom-file-input" id="inputGroupFile01"
+                           aria-describedby="inputGroupFileAddon01" onchange="form.submit()">
+                    <label class="custom-file-label" for="inputGroupFile01">Select an image to search for</label>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@if (Model.SearchResult != null)
+{
+    <div class="card mx-auto search-image-card mb-2">
+        <img src="@Model.ImageUrl" class="card-img-top" alt="@Model.SearchResult.Description">
+        <div class="card-body">
+            <h5 class="card-title">@Model.SearchResult.Description</h5>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            Search Results
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled">
+                @foreach (var image in Model.SearchResult.Images)
+                {
+                    <li class="media mb-3">
+                        <img src="@image.ThumbnailUrl" class="mr-3 img-thumbnail thumbnail" alt="@image.Name">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">@image.Name</h5>
+                            <a href="@image.HostPageUrl" target="_blank">@image.HostPageUrl</a>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+}
+

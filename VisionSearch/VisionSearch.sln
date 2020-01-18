@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisionSearch", "VisionSearch\VisionSearch.csproj", "{42AD1BA9-27A9-42D7-A704-04E5E4282DC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisionSearch.Core", "VisionSearch.Core\VisionSearch.Core.csproj", "{D86BB03C-17D3-4A5A-B098-3147E1ED543B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42AD1BA9-27A9-42D7-A704-04E5E4282DC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42AD1BA9-27A9-42D7-A704-04E5E4282DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42AD1BA9-27A9-42D7-A704-04E5E4282DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42AD1BA9-27A9-42D7-A704-04E5E4282DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D86BB03C-17D3-4A5A-B098-3147E1ED543B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D86BB03C-17D3-4A5A-B098-3147E1ED543B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D86BB03C-17D3-4A5A-B098-3147E1ED543B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D86BB03C-17D3-4A5A-B098-3147E1ED543B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5179588B-31A4-487D-9F37-690D21834DC5}
+	EndGlobalSection
+EndGlobal
