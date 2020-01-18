@@ -40,17 +40,22 @@ namespace VisionSearch.Core
             var imageAnalysisResult = await visionClient.AnalyzeImageInStreamAsync(image, visualFeatures, visionDetails);
             var description = ExtractDescription(imageAnalysisResult);
 
-            var searchResult = await searchClient.Images.SearchAsync(description);
+            if (!string.IsNullOrWhiteSpace(description))
+            {
+                var searchResult = await searchClient.Images.SearchAsync(description);
 
-            var result = new SearchResult(description, searchResult.Value);
-            return result;
+                var result = new SearchResult(description, searchResult.Value);
+                return result;
+            }
+
+            return null;
         }
 
         private static string ExtractDescription(ImageAnalysis imageAnalysis)
         {
             return imageAnalysis.Categories?.FirstOrDefault(c => c.Name == "people_" || c.Name == "people_portrait")?.Detail?.Celebrities?.FirstOrDefault()?.Name
                 ?? imageAnalysis.Categories?.FirstOrDefault()?.Detail?.Landmarks?.FirstOrDefault()?.Name
-                ?? imageAnalysis.Description.Captions.FirstOrDefault().Text;
+                ?? imageAnalysis.Description.Captions?.FirstOrDefault()?.Text;
         }
     }
 }
