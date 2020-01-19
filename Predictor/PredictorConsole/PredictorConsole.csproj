@@ -4,11 +4,10 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\SentimentAnalysis\SentimentAnalysis.csproj" />
+    <PackageReference Include="Microsoft.Extensions.ML" Version="1.4.0" />
+    <PackageReference Include="Microsoft.ML" Version="1.4.0" />
   </ItemGroup>
-
   <ItemGroup>
     <None Update="MLModels\sentiment_model.zip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

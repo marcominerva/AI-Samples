@@ -1,9 +1,7 @@
 ﻿using Microsoft.Azure.Functions.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.ML;
 using Predictor;
-using SentimentAnalysis;
-using SentimentAnalysis.DataModels;
+using Predictor.DataModels;
 using System;
 using System.IO;
 
@@ -40,12 +38,6 @@ namespace Predictor
             //      modelName: "SentimentAnalysisModel",
             //      uri: "https://github.com/dotnet/samples/raw/master/machine-learning/models/sentimentanalysis/sentiment_model.zip",
             //      period: TimeSpan.FromMinutes(10));
-
-            builder.Services.AddScoped<ISentimentAnalyzer>(sp =>
-            {
-                var pool = sp.GetRequiredService<PredictionEnginePool<SentimentData, SentimentPrediction>>();
-                return new SentimentAnalyzer(pool.GetPredictionEngine(modelName: "SentimentAnalysisModel"));
-            });
         }
     }
 }

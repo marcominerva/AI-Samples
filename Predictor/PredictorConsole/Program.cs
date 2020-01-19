@@ -1,6 +1,5 @@
 ﻿using Microsoft.ML;
-using SentimentAnalysis;
-using SentimentAnalysis.DataModels;
+using PredictorConsole.DataModels;
 using System;
 using System.IO;
 using System.Net.Http;
@@ -10,13 +9,12 @@ namespace PredictorConsole
 {
     internal class Program
     {
-        private static async Task Main(string[] args)
+        private static void Main(string[] args)
         {
             var mlContext = new MLContext();
-            var mlModel = await GetLocalModelAsync(mlContext);
+            var modelPath = Path.Combine(AppContext.BaseDirectory, "MLModels", "sentiment_model.zip");
+            var mlModel = mlContext.Model.Load(modelPath, out _);
             var predictionEngine = mlContext.Model.CreatePredictionEngine<SentimentData, SentimentPrediction>(mlModel);
-
-            var sentimentAnalyzer = new SentimentAnalyzer(predictionEngine);
 
             string text;
             do
@@ -26,8 +24,11 @@ namespace PredictorConsole
                 text = Console.ReadLine();
                 if (!string.IsNullOrWhiteSpace(text))
                 {
-                    var result = await sentimentAnalyzer.AnalyzeAsync(text);
-                    Console.WriteLine($"Sentiment: {result.Sentiment} (Confidence: {result.Confidence:P2})");
+                    var prediction = predictionEngine.Predict(new SentimentData { SentimentText = text });
+
+                    Console.WriteLine($"Sentiment: {(Convert.ToBoolean(prediction.Prediction) ? "Positive" : "Negative")}" +
+                        $" (Positive Probability: {prediction.Probability:P2})");
+
                     Console.WriteLine();
                 }
 

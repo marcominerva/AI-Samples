@@ -7,5 +7,7 @@
         public string Sentiment { get; set; }
 
         public bool IsPositive { get; set; }
+
+        public float PositiveProbability { get; set; }
     }
 }

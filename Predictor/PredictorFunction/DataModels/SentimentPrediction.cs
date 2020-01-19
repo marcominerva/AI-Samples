@@ -1,8 +1,8 @@
 ﻿using Microsoft.ML.Data;
 
-namespace SentimentAnalysis.DataModels
+namespace Predictor.DataModels
 {
-    public class SentimentPrediction : SentimentData
+    public class SentimentPrediction
     {
 
         [ColumnName("PredictedLabel")]
