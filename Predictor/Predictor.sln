@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PredictorFunction", "Predic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PredictorConsole", "PredictorConsole\PredictorConsole.csproj", "{EB3700E8-CF1E-4519-82FD-1AC8284B6709}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredictorDesktop", "PredictorDesktop\PredictorDesktop.csproj", "{502B0731-D0D7-445A-B3D0-F2181C195012}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EB3700E8-CF1E-4519-82FD-1AC8284B6709}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB3700E8-CF1E-4519-82FD-1AC8284B6709}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB3700E8-CF1E-4519-82FD-1AC8284B6709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{502B0731-D0D7-445A-B3D0-F2181C195012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{502B0731-D0D7-445A-B3D0-F2181C195012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{502B0731-D0D7-445A-B3D0-F2181C195012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{502B0731-D0D7-445A-B3D0-F2181C195012}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
