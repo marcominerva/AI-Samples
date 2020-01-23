@@ -46,13 +46,7 @@ namespace VisionSearch
                 return client;
             });
 
-            services.AddScoped<IVisionSearchClient, VisionSearchClient>(sp =>
-            {
-                var visionClient = sp.GetRequiredService<IComputerVisionClient>();
-                var searchClient = sp.GetRequiredService<IImageSearchClient>();
-
-                return new VisionSearchClient(visionClient, searchClient);
-            });
+            services.AddScoped<IVisionSearchClient, VisionSearchClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
