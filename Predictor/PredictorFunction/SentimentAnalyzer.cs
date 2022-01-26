@@ -1,3 +1,6 @@
+using System;
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -7,9 +10,6 @@ using Microsoft.Extensions.ML;
 using Newtonsoft.Json;
 using Predictor.DataModels;
 using Predictor.Models;
-using System;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace Predictor
 {
