@@ -1,15 +1,14 @@
 ﻿using Microsoft.ML.Data;
 
-namespace PredictorConsole.DataModels
+namespace PredictorConsole.DataModels;
+
+public class SentimentPrediction
 {
-    public class SentimentPrediction
-    {
 
-        [ColumnName("PredictedLabel")]
-        public bool Prediction { get; set; }
+    [ColumnName("PredictedLabel")]
+    public bool Prediction { get; set; }
 
-        public float Probability { get; set; }
+    public float Probability { get; set; }
 
-        public float Score { get; set; }
-    }
+    public float Score { get; set; }
 }
