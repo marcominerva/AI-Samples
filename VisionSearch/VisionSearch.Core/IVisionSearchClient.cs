@@ -2,10 +2,9 @@
 using System.Threading.Tasks;
 using VisionSearch.Core.Models;
 
-namespace VisionSearch.Core
+namespace VisionSearch.Core;
+
+public interface IVisionSearchClient
 {
-    public interface IVisionSearchClient
-    {
-        Task<SearchResult> SearchAsync(Stream image);
-    }
+    Task<SearchResult> SearchAsync(Stream image);
 }

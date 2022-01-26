@@ -1,13 +1,12 @@
-﻿namespace VisionSearch.Models
+﻿namespace VisionSearch.Models;
+
+public class AppSettings
 {
-    public class AppSettings
-    {
-        public string VisionEndpoint { get; set; }
+    public string VisionEndpoint { get; init; }
 
-        public string VisionSubscriptionKey { get; set; }
+    public string VisionSubscriptionKey { get; init; }
 
-        public string BingEndpoint { get; set; }
+    public string BingEndpoint { get; init; }
 
-        public string BingSubscriptionKey { get; set; }
-    }
+    public string BingSubscriptionKey { get; init; }
 }
