@@ -1,5 +1,4 @@
-﻿
-using Microsoft.ML;
+﻿using Microsoft.ML;
 using PredictorConsole.DataModels;
 
 var mlContext = new MLContext();

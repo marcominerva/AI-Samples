@@ -4,7 +4,6 @@ namespace PredictorConsole.DataModels;
 
 public class SentimentPrediction
 {
-
     [ColumnName("PredictedLabel")]
     public bool Prediction { get; set; }
 
